@@ -1,5 +1,6 @@
 <configure xmlns="http://namespaces.zope.org/zope"
-           i18n_domain="zopeinstancetest">
+           i18n_domain="zopeinstancetest"
+           xmlns:browser="http://namespaces.zope.org/browser">
 
   <include package="zope.security" file="meta.zcml" />
   <include package="zope.app.zcmlfiles" file="meta.zcml" />
@@ -23,5 +24,12 @@
   <include package="zope.app.catalog" />
 
   <!-- Add your own component registrations here -->
+
+  <browser:page
+    for="*"
+    name="hello"
+    class=".browser.HelloPage"
+    permission="zope.Public"
+    />
 
 </configure>
